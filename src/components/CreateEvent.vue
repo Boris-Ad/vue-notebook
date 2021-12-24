@@ -77,10 +77,11 @@ export default {
     const date = computed(() => store.getters['selectedDate'])
 
     const onSubmit = handleSubmit(async values => {
-      
-      if (eventCategory.value === '' || openSelect.value === false) {
+      if (store.getters['events'].length === 0) openSelect.value = false
+      if (eventCategory.value === '' && openSelect.value === false) {
         return (eventCategoryError.value = 'Не должно быть пустым')
       }
+     
       await store.dispatch('methods/addEvent', {
         ...values,
         day: date.value.day,

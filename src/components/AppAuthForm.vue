@@ -37,7 +37,7 @@
             Пароль не действительный
           </div>
         </div>
-        <div class="d-flex">
+        <div>
           <button type="submit" class="btn btn-primary" :disabled="isSubmitting">{{ btnSubmitName }}</button>
           <button @click.prevent="exit" class="btn btn-danger mx-3">Отмена</button>
           <router-link
@@ -45,7 +45,7 @@
             :to="{ name: 'SignUp' }"
             class="btn btn-primary mx-3 ms-auto"
           >
-            Зарегистрироваться
+            Регистрация
           </router-link>
         </div>
       </form>
