@@ -1,5 +1,5 @@
 <template>
-  <div class="card mx-auto mt-4" style="width: 26rem;">
+  <div class="card mx-auto mt-4" style="max-width: 26rem;">
     <div class="card-header">{{ formHeader }}</div>
     <div class="card-body">
       <form @submit.prevent="onSubmit">

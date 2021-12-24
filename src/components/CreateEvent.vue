@@ -77,7 +77,7 @@ export default {
     const date = computed(() => store.getters['selectedDate'])
 
     const onSubmit = handleSubmit(async values => {
-      console.log('log',eventCategory.value === '');
+      
       if (eventCategory.value === '' || openSelect.value === false) {
         return (eventCategoryError.value = 'Не должно быть пустым')
       }
