@@ -23,7 +23,7 @@
         <input
           ref="inputCategory"
           @input="eventCategoryError = false"
-          v-model.trim="eventCategory"
+          v-model="eventCategory"
           type="text"
           class="form-control"
         />
@@ -77,7 +77,8 @@ export default {
     const date = computed(() => store.getters['selectedDate'])
 
     const onSubmit = handleSubmit(async values => {
-      if (openSelect.value === false && eventCategory.value === '') {
+      console.log('log',eventCategory.value === '');
+      if (eventCategory.value === '' || openSelect.value === false) {
         return (eventCategoryError.value = 'Не должно быть пустым')
       }
       await store.dispatch('methods/addEvent', {
